@@ -8,11 +8,12 @@ define(function(require, exports, module) {
 
 //  ExtensionUtils.loadStyleSheet(module, "./resources/css/style.css");
 
-  window.onload = function() {
-    $icon = $("<div id=\"status-sync\">Something</div>")
-    .click(_subMenu)
-    .appendTo($("#status-info"));
-  };
+  var statusBar = brackets.getModule("widgets/StatusBar");
+
+  $icon = $("<div>HERE'S OUR ICON!</div>")
+  .click(_subMenu);
+
+  statusBar.addIndicator("sync-indicator", $icon, true);
 
   function _subMenu() {
     if (!SyncUtil.is.connected) {
