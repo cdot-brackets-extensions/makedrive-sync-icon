@@ -10,7 +10,7 @@ define(function(require, exports, module) {
 
   var statusBar = brackets.getModule("widgets/StatusBar");
 
-  $icon = $("<img src=\"extensions/default/SyncIcon/lib/nimble.png\" />")
+  $icon = $("<div><img src=\"extensions/default/SyncIcon/lib/nimble.png\" /></div>")
     .click(_subMenu);
 
   statusBar.addIndicator("sync-indicator", $icon, true);
