@@ -8,9 +8,11 @@ define(function(require, exports, module) {
 
 //  ExtensionUtils.loadStyleSheet(module, "./resources/css/style.css");
 
-  $icon = $("<div id=\"status-sync\">Something</div>")
-  .click(_subMenu)
-  .appendTo($("#status-info"));
+  window.on('load', function() {
+    $icon = $("<div id=\"status-sync\">Something</div>")
+    .click(_subMenu)
+    .appendTo($("#status-info"));
+  });
 
   function _subMenu() {
     if (!SyncUtil.is.connected) {
