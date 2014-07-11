@@ -10,7 +10,7 @@ define(function(require, exports, module) {
 
   $icon = $("<div id=\"status-sync\">Something</div>")
   .click(_subMenu)
-  .appendTo($("#status-info .info"));
+  .appendTo($("#status-info"));
 
   function _subMenu() {
     if (!SyncUtil.is.connected) {
