@@ -6,9 +6,9 @@ define(function(require, exports, module) {
 
   var $icon;
 
-  ExtensionUtils.loadStyleSheet(module, "./resources/css/style.css");
+//  ExtensionUtils.loadStyleSheet(module, "./resources/css/style.css");
 
-  $icon = $("<a class=\"icon\">Q</a>")
+  $icon = $("<div id=\"status-sync\">Something</div>")
   .click(_subMenu)
   .appendTo($("#status-info .info"));
 
