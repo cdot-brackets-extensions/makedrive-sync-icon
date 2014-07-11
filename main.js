@@ -10,22 +10,13 @@ define(function(require, exports, module) {
 
   var statusBar = brackets.getModule("widgets/StatusBar");
 
-  $icon = $("<div>HERE'S OUR ICON!</div>")
-  .click(_subMenu);
+  $icon = $("<img src=\"extensions/default/SyncIcon/lib/nimble.png\" />")
+    .click(_subMenu);
 
   statusBar.addIndicator("sync-indicator", $icon, true);
 
   function _subMenu() {
-    if (!SyncUtil.is.connected) {
-      // Popup menu logic here
-        //  Options GREYED OUT
-    }
-    if (SyncUtil.is.syncing) {
-      // Popup menu logic here
-        // Sync greyed out
-    }
-    // Popup menu logic here
-      // All options available
+    SyncUtil.sync();
   }
 
   // Attach listeners
