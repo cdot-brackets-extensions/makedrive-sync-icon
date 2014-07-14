@@ -6,14 +6,15 @@ define(function(require, exports, module) {
 
   var $icon;
 
-//  ExtensionUtils.loadStyleSheet(module, "./resources/css/style.css");
+  ExtensionUtils.loadStyleSheet(module, "./lib/css/fontawesome.css");
+  ExtensionUtils.loadStyleSheet(module, "./lib/css/style.css");
 
   var statusBar = brackets.getModule("widgets/StatusBar");
 
-  $icon = $("<div><img src=\"extensions/default/SyncIcon/lib/nimble.png\" /></div>")
+  $icon = $("<div>Time to sync!</div>")
     .click(_subMenu);
-
   statusBar.addIndicator("sync-indicator", $icon, true);
+  $icon = $("#sync-indicator");
 
   function _subMenu() {
     SyncUtil.sync();
@@ -31,15 +32,15 @@ define(function(require, exports, module) {
     },
     onError: function(err) {
       // Update UI to show a warning symbol
-      console.log("Something errored! Here it is: " + err.toString());
+      console.log("Something errored! Here it is: ", err);
     },
     onSyncing: function() {
       // Update UI to show a progress wheel
-      console.log("We started syncing!");
+      $icon.html("SYNCING");
     },
     onCompleted: function() {
       // Update UI to blink slowly, then show a checkmark again
-      console.log("The sync finished!");
+      $icon.html("SYNCED");
     }
   });
 });
