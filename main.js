@@ -11,10 +11,10 @@ define(function(require, exports, module) {
 
   var statusBar = brackets.getModule("widgets/StatusBar");
 
-  $icon = $("<div>Time to sync!</div>")
+  $icon = $("<div><i id=\"sync-icon\" class=\"fa fa-spinner\"></i></div>")
     .click(_subMenu);
+
   statusBar.addIndicator("sync-indicator", $icon, true);
-  $icon = $("#sync-indicator");
 
   function _subMenu() {
     SyncUtil.sync();
@@ -36,11 +36,11 @@ define(function(require, exports, module) {
     },
     onSyncing: function() {
       // Update UI to show a progress wheel
-      $icon.html("SYNCING");
+      console.log("We started syncing!");
     },
     onCompleted: function() {
       // Update UI to blink slowly, then show a checkmark again
-      $icon.html("SYNCED");
+      console.log("The sync finished!");
     }
   });
 });
