@@ -23,7 +23,7 @@ define(function(require, exports, module) {
         }, 0);
       };
       if(!(that.intervalTrigger)){
-        element.css("color", "blue");
+        element.css("color", "#007FFF");
         that.intervalTrigger = timer();
       }
     },
