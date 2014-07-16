@@ -1,5 +1,8 @@
 define(function(require, exports, module) {
   "use strict";
+  
+  require("lib/vendor/jQueryRotate");
+  require("lib/vendor/jquery.easing.min");
 
   var ExtensionUtils = brackets.getModule("utils/ExtensionUtils");
   var SyncUtil = require('./lib/syncutil');
